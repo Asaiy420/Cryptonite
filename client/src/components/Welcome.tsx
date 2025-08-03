@@ -2,12 +2,14 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 import Loader from "./Loader";
+import { useContext } from "react";
+import { TransactionContext } from "../context/TransactionContext";
 
 interface Props {
   placeholder: string;
   name: string;
   type: string;
-  value: string;
+  value?: string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>, name: string) => void;
 }
 
@@ -25,7 +27,8 @@ const Input = ({ placeholder, name, type, value, handleChange }: Props) => (
   />
 );
 const Welcome = () => {
-  const connectWallet = () => {};
+  const {connectWallet} = useContext(TransactionContext);
+  
 
   const handleSubmit = () => {};
 
